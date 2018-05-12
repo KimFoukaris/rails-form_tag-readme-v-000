@@ -189,3 +189,11 @@ Processing by PostsController#new as HTML
   Parameters: {"post"=>{"title"=>"a", "description"=>"aaaa"}}
   Rendered posts/new.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=a&post%5Bdescription%5D=aaaa%0D%0A" for 46.199.241.13 at 2018-05-12 05:47:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"a", "description"=>"aaaa\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 242ms (Views: 231.7ms | ActiveRecord: 0.0ms)
